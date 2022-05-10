@@ -243,7 +243,7 @@ def train(args):
             for name in aggregated_para:
                 for name2 in local_models[i].student_bert_models.state_dict():
                     if name in name2:
-                        local_models[i].student_bert_models.state_dict()[name][:]=torch.FloatTensor(aggregated_para[name]).cuda()
+                        local_models[i].student_bert_models.state_dict()[name][:] += torch.FloatTensor(aggregated_para[name]).cuda()
         latest_local_student_para=[{name:para.detach().cpu().numpy() for name,para in model.student_bert_models.named_parameters()} for model in local_models]
     
     dataloader.join()
