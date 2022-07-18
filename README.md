@@ -19,5 +19,7 @@ Needs a server with at least one Tesla V100 GPU, while a larger number of GPUs (
 * Change the path names and data file names. If you have K GPUs, need to split the entire training data into K folds.
 * Execute "sh run.sh"
 
-Note: The logs at the training stage will show the training loss and accuracy. Logs at the test stage will show the test results. The sample codes usually run for a few minutes.
+Note: The logs at the training stage will show the training loss and accuracy. Logs at the test stage will show the test results. The sample codes usually run for a few minutes. The name "tnlrv3" in code is an alias of UniLM v2. At the current stage, it is available internally in Microsoft. It is suggested to use UniLM (v1) or other pretrained language models such as BERT and RoBERTa which are directly accessable on Huggingface APIs.
+
+
 
